@@ -1,28 +1,14 @@
 .App {
   text-align: center;
-}
 
-.App-header {
-  align-items: center;
-  background-color: #282C34;
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.App-link {
-  color: #61DAFB;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
+  &-header {
+    align-items: center;
+    background-color: #282C34;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+    justify-content: center;
+    min-height: 100vh;
   }
 }

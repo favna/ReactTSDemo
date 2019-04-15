@@ -1,4 +1,4 @@
-import React, { Component, FC, Fragment } from 'react';
+import React, { FC, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { ApplicationState } from 'src/redux';
@@ -6,10 +6,10 @@ import { decrement, decrementAsync, increment, incrementAsync } from 'src/redux/
 
 type Props = {
     count: number;
-    increment (amount?: number): void;
-    decrement (amount?: number): void;
-    incrementAsync (amount?: number): void;
-    decrementAsync (amount?: number): void;
+    increment (amount: number): void;
+    decrement (amount: number): void;
+    incrementAsync (amount: number): void;
+    decrementAsync (amount: number): void;
 };
 
 export const ContainerComponent: FC<Props> = props => {
@@ -17,10 +17,10 @@ export const ContainerComponent: FC<Props> = props => {
         <Fragment>
             <h1>store count: {props.count}</h1>
             <div className='container-div'>
-                <button className='container' onClick={() => props.increment}>Increment</button>
-                <button className='container' onClick={() => props.incrementAsync}>Increment Async</button>
-                <button className='container' onClick={() => props.decrement}>Decrement</button>
-                <button className='container' onClick={() => props.decrementAsync}>Decrement Async</button>
+                <button className='container' onClick={() => props.increment(1)}>Increment</button>
+                <button className='container' onClick={() => props.incrementAsync(1)}>Increment Async</button>
+                <button className='container' onClick={() => props.decrement(1)}>Decrement</button>
+                <button className='container' onClick={() => props.decrementAsync(1)}>Decrement Async</button>
             </div>
         </Fragment>
     );
@@ -31,14 +31,14 @@ export const mapStateToProps = (state: ApplicationState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-bindActionCreators(
-    {
-        increment,
-        decrement,
-        incrementAsync,
-        decrementAsync,
-    },
-    dispatch
-);
+    bindActionCreators(
+        {
+            increment,
+            decrement,
+            incrementAsync,
+            decrementAsync,
+        },
+        dispatch
+    );
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContainerComponent);
