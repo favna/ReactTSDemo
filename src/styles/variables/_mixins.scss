@@ -1,0 +1,77 @@
+@import './colors';
+
+// stylelint-disable-next-line number-max-precision
+$arrowModifier: 1.41421356;
+
+@mixin font-normal {
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*
+  Based on CSS Arrows from: http://www.cssarrowplease.com/
+  $color is the color of the arrow
+  $arrowSize is the size of the arrow
+  $borderSize affects the size of the entire tooltip
+              and should be smaller than $arrowSize
+  $[top|bottom|left|right]Offset defines the offset the arrow has to the
+              tooltip. 50% puts it in the middle of the tooltip of the given side
+*/
+@mixin popperArrowUpGenerator ($color, $arrowSize, $borderSize, $leftOffset) {
+  &::after,
+  &::before {
+    border: solid transparent;
+    bottom: 100%;
+    content: ' ';
+    height: 0;
+    left: $leftOffset;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+  }
+
+  &::after {
+    border-bottom-color: $white;
+    border-width: $arrowSize;
+    margin-left: -$arrowSize;
+  }
+
+  &::before {
+    border-bottom-color: $color;
+    border-width: ($arrowSize + ($borderSize * $arrowModifier));
+    margin-left: -($arrowSize + ($borderSize * $arrowModifier));
+  }
+}
+
+@mixin popperArrowLeftGenerator ($color, $arrowSize, $borderSize, $topOffset) {
+  &::after,
+  &::before {
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 100%;
+    top: $topOffset;
+    width: 0;
+  }
+
+  &::after {
+    border-right-color: $white;
+    border-width: $arrowSize;
+    margin-top: -$arrowSize;
+  }
+
+  &::before {
+    border-right-color: $color;
+    border-width: ($arrowSize + ($borderSize * $arrowModifier));
+    margin-top: -($arrowSize + ($borderSize * $arrowModifier));
+  }
+}
+
+@mixin beautifulCenter {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  max-width: 90vw;
+}

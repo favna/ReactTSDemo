@@ -1,0 +1,7 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-config-air"],
+  "linterOptions": {
+      "exclude": ["node_modules/", "node_modules/**/*[^.d$].ts"]
+  }
+}

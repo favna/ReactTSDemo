@@ -3,20 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "24.0.11",
-    "@types/node": "11.13.4",
-    "@types/react": "16.8.13",
-    "@types/react-dom": "16.8.4",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "@types/common-tags": "^1.8.0",
+    "classnames": "^2.2.6",
+    "common-tags": "^1.8.0",
+    "normalize-scss": "^7.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-jss": "^8.6.1",
+    "react-redux": "^6.0.1",
     "react-scripts": "2.1.8",
-    "typescript": "3.4.3"
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^1.0.2",
+    "tslint-config-air": "RWS-NL/tslint-config-air",
+    "typesafe-actions": "^3.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "concurrently \"yarn tslint\" \"yarn stylelint\"",
+    "tslint": "tslint --fix -p . -c ./tslint.json --fix './src/**/*.{ts,tsx}'",
+    "stylelint": "stylelint --fix ./src/styles/**/*.scss ./src/styles/*.scss"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -26,5 +37,32 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/classnames": "^2.2.7",
+    "@types/enzyme": "^3.9.1",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.0",
+    "@types/react": "^16.8.12",
+    "@types/react-dom": "^16.8.3",
+    "@types/react-jss": "^8.6.3",
+    "@types/react-redux": "^7.0.6",
+    "@types/redux-mock-store": "^1.0.0",
+    "@types/uuid": "^3.4.4",
+    "concurrently": "^4.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "node-sass": "^4.11.0",
+    "redux-mock-store": "^1.5.3",
+    "redux-saga-test-plan": "^4.0.0-beta.2",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-sass-guidelines": "^5.3.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "^3.5.4",
+    "tslint": "^5.15.0",
+    "typescript": "^3.4.2",
+    "uuid": "^3.3.2"
+  }
 }
