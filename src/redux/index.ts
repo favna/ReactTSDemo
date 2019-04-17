@@ -5,13 +5,13 @@ import demoSaga from './saga';
 import { DemoState } from './types';
 
 export interface ApplicationState {
-    app: DemoState;
+  app: DemoState;
 }
 
 export const rootReducer = combineReducers<ApplicationState>({
-    app: DemoReducer,
+  app: DemoReducer,
 });
 
 export function* rootSaga () {
-    yield all([fork(demoSaga)]);
+  yield all([fork(demoSaga)]);
 }
