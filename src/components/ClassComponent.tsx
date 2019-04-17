@@ -10,7 +10,9 @@ type State = {
 };
 
 class ClassComponent extends Component<Props, State> {
-  constructor (props: Props, private description: string) {
+  public description: string;
+
+  constructor (props: Props) {
     super(props);
     this.description = '';
     this.state = {counter: 0};
