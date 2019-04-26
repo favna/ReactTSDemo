@@ -1,3 +1,4 @@
+import Button from './MaterialComponent';
 import React, { FC, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
@@ -17,10 +18,10 @@ export const ContainerComponent: FC<ContainerComponentProps> = props => {
     <Fragment>
       <h1>store count: {props.count}</h1>
       <div className='container-div'>
-        <button className='container' data-qa='increment' onClick={() => props.increment(1)}>Increment</button>
-        <button className='container' data-qa='increment-async' onClick={() => props.incrementAsync(1)}>Increment Async</button>
-        <button className='container' data-qa='decrement' onClick={() => props.decrement(1)}>Decrement</button>
-        <button className='container' data-qa='decrement-async' onClick={() => props.decrementAsync(1)}>Decrement Async</button>
+        <Button variant='contained' color='primary' dataQa='increment' label='Increment' onClick={() => props.increment(1)} />
+        <Button variant='contained' color='primary' dataQa='increment-async' label='Increment Async' onClick={() => props.incrementAsync(1)} />
+        <Button variant='contained' color='primary' dataQa='decrement' label='Decrement' onClick={() => props.decrement(1)} />
+        <Button variant='contained' color='primary' dataQa='decrement-async' label='Decrement Async' onClick={() => props.decrementAsync(1)} />
       </div>
     </Fragment>
   );

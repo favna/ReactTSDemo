@@ -1,0 +1,23 @@
+@import '../variables/colors';
+
+@mixin rwsButtonDefaults {
+  border-radius: 0;
+  box-shadow: none;
+  float: right;
+  height: 3.2rem;
+  line-height: initial;
+  margin-right: 1%;
+  width: 10vw;
+}
+
+.rwsButton {
+  @include rwsButtonDefaults;
+  background-color: $blue;
+}
+
+.rwsButtonLabel {
+  color: $white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: none;
+}

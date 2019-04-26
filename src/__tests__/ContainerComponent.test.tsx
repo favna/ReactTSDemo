@@ -25,7 +25,7 @@ describe('ConnectedContainerComponent', () => {
   beforeEach(() => mountAndSetup());
 
   test('should dispatch Increment when clicking increment button', () => {
-    const incrementButton = containerComponent.find('[data-qa="increment"]');
+    const incrementButton = containerComponent.find('Button[data-qa="increment"]');
 
     incrementButton.simulate('click');
 
@@ -33,7 +33,7 @@ describe('ConnectedContainerComponent', () => {
   });
 
   test('should dispatch IncrementAsync when clicking increment-async button', () => {
-    const incrementAsyncButton = containerComponent.find('[data-qa="increment-async"]');
+    const incrementAsyncButton = containerComponent.find('Button[data-qa="increment-async"]');
 
     incrementAsyncButton.simulate('click');
 
@@ -41,7 +41,7 @@ describe('ConnectedContainerComponent', () => {
   });
 
   test('should dispatch Decrement when clicking decrement button', () => {
-    const decrementButton = containerComponent.find('[data-qa="decrement"]');
+    const decrementButton = containerComponent.find('Button[data-qa="decrement"]');
 
     decrementButton.simulate('click');
 
@@ -49,7 +49,7 @@ describe('ConnectedContainerComponent', () => {
   });
 
   test('should dispatch DecrementAsync when clicking decrement-async button', () => {
-    const decrementAsyncButton = containerComponent.find('[data-qa="decrement-async"]');
+    const decrementAsyncButton = containerComponent.find('Button[data-qa="decrement-async"]');
 
     decrementAsyncButton.simulate('click');
 

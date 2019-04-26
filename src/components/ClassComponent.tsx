@@ -36,7 +36,7 @@ class ClassComponent extends Component<Props, State> {
         <small>{this.props.subtitle}</small>
         <p>{this.description}</p>
         <p> local state count: {this.state.counter}</p>
-        <button onClick={this.handleClick}>UPDATE</button>
+        <button onClick={this.handleClick} style={{color: 'white', fontWeight: 'bold', border: 0, borderRadius: 0, cursor: 'pointer'}}>UPDATE</button>
       </Fragment>
     );
   }
