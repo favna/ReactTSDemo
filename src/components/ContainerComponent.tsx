@@ -4,7 +4,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { ApplicationState } from 'store';
 import { decrement, decrementAsync, increment, incrementAsync } from 'store/actions';
 
-type Props = {
+export type ContainerComponentProps = {
   count: number;
   increment (amount: number): void;
   decrement (amount: number): void;
@@ -12,15 +12,15 @@ type Props = {
   decrementAsync (amount: number): void;
 };
 
-export const ContainerComponent: FC<Props> = props => {
+export const ContainerComponent: FC<ContainerComponentProps> = props => {
   return (
     <Fragment>
       <h1>store count: {props.count}</h1>
       <div className='container-div'>
-        <button className='container' onClick={() => props.increment(1)}>Increment</button>
-        <button className='container' onClick={() => props.incrementAsync(1)}>Increment Async</button>
-        <button className='container' onClick={() => props.decrement(1)}>Decrement</button>
-        <button className='container' onClick={() => props.decrementAsync(1)}>Decrement Async</button>
+        <button className='container' data-qa='increment' onClick={() => props.increment(1)}>Increment</button>
+        <button className='container' data-qa='increment-async' onClick={() => props.incrementAsync(1)}>Increment Async</button>
+        <button className='container' data-qa='decrement' onClick={() => props.decrement(1)}>Decrement</button>
+        <button className='container' data-qa='decrement-async' onClick={() => props.decrementAsync(1)}>Decrement Async</button>
       </div>
     </Fragment>
   );

@@ -1,8 +1,8 @@
 import { createMuiTheme, Theme } from '@material-ui/core/styles';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import React, { FC } from 'react';
 import { Provider } from 'react-redux';
-import configureStore, { MockStoreEnhanced } from 'redux-mock-store';
+import configureMockStore from 'redux-mock-store';
 import { ThemeProvider } from 'theming';
 
 // @ts-ignore
@@ -42,13 +42,10 @@ type componentProviderSetupOptions = {
 
 const testComponent: FC = () => <div/>;
 
-export const componentWithProvidersSetup = (options: componentProviderSetupOptions) => {
-  const mockStore = configureStore([]);
+export const componentWithProvidersSetup = <P,S,C>(options: componentProviderSetupOptions) => {
   const subComponent = options.SubComponent || testComponent;
   const state = options.state || {};
-  const store: MockStoreEnhanced = mockStore({
-    ...state,
-  });
+  const store = configureMockStore([])({...state});
 
   const providerMount = mount(
     <Provider store={store}>
@@ -60,7 +57,7 @@ export const componentWithProvidersSetup = (options: componentProviderSetupOptio
 
   return {
     providerMount,
-    component: providerMount.find(subComponent),
+    component: providerMount.find(subComponent) as unknown as ReactWrapper<P, S, C>,
     store,
   };
 };
