@@ -1,24 +1,12 @@
-import { AnyAction, Reducer } from 'redux';
 import { DemoActions, DemoState } from './types';
+import { createReducer } from 'typesafe-actions';
 
 const initialState: DemoState = {
   count: 0,
 };
 
-const reducer: Reducer<DemoState> = (state = initialState, action: AnyAction) => {
-  switch (action.type) {
-    case DemoActions.INCREMENT: {
-      return {...state, count: state.count + action.payload};
-    }
-
-    case DemoActions.DECREMENT: {
-      return {...state, count: state.count - action.payload};
-    }
-
-    default: {
-      return state;
-    }
-  }
-};
+const reducer = createReducer(initialState)
+  .handleAction(DemoActions.INCREMENT, (state, action) => ({ ...state, count: state.count + action.payload }))
+  .handleAction(DemoActions.DECREMENT, (state, action) => ({ ...state, count: state.count - action.payload }));
 
 export default reducer;
