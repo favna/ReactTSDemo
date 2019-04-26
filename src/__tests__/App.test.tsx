@@ -1,8 +1,8 @@
+import App from 'App';
+import ClassComponent from 'components/ClassComponent';
+import ConnectedContainerComponent from 'components/ContainerComponent';
 import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
-import App from 'src/App';
-import ClassComponent from 'src/components/ClassComponent';
-import ConnectedContainerComponent from 'src/components/ContainerComponent';
 
 let app: ShallowWrapper;
 

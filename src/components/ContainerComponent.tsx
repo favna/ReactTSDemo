@@ -1,8 +1,8 @@
 import React, { FC, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
-import { ApplicationState } from 'src/redux';
-import { decrement, decrementAsync, increment, incrementAsync } from 'src/redux/actions';
+import { ApplicationState } from 'store';
+import { decrement, decrementAsync, increment, incrementAsync } from 'store/actions';
 
 type Props = {
   count: number;

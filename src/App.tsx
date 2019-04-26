@@ -1,7 +1,7 @@
+import ClassComponent from 'components/ClassComponent';
+import ConnectedContainerComponent from 'components/ContainerComponent';
+import FunctionalComponent from 'components/FunctionalComponent';
 import React, { Component } from 'react';
-import ClassComponent from 'src/components/ClassComponent';
-import ConnectedContainerComponent from 'src/components/ContainerComponent';
-import FunctionalComponent from 'src/components/FunctionalComponent';
 
 class App extends Component {
   render () {

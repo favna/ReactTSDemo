@@ -1,8 +1,8 @@
 import { fork } from '@redux-saga/core/effects';
 import { testSaga } from 'redux-saga-test-plan';
-import { decrement, increment } from 'src/redux/actions';
-import * as sagas from 'src/redux/saga';
-import { DemoActions } from 'src/redux/types';
+import { decrement, increment } from 'store/actions';
+import * as sagas from 'store/saga';
+import { DemoActions } from 'store/types';
 
 describe('React TS Demo Saga', () => {
   describe('Unit Test', () => {

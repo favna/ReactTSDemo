@@ -1,6 +1,6 @@
+import FunctionalComponent from 'components/FunctionalComponent';
 import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
-import FunctionalComponent from 'src/components/FunctionalComponent';
 
 let functionalComponent: ShallowWrapper;
 

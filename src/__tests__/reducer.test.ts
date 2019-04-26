@@ -1,6 +1,6 @@
-import { decrement, increment } from 'src/redux/actions';
-import demoReducer from 'src/redux/reducer';
-import { DemoState } from 'src/redux/types';
+import { decrement, increment } from 'store/actions';
+import demoReducer from 'store/reducer';
+import { DemoState } from 'store/types';
 
 const initialState: DemoState = {
   count: 0,

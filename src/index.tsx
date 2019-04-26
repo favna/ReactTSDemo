@@ -5,8 +5,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { Provider } from 'react-redux';
-import configureStore from 'src/redux/config';
-import 'src/styles/styles.scss';
+import configureStore from 'store/config';
+import 'styles/styles.scss';
 
 // @ts-ignore
 const createTheme: Theme = createMuiTheme({
