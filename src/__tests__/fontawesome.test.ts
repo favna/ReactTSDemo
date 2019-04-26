@@ -4,6 +4,8 @@ import createFontAwesomeLibrary from 'fontawesome';
 beforeAll(() => createFontAwesomeLibrary());
 
 test('FontAwesome should only contain the tested icons', () => {
-    const supportedIcons = Object.keys(library.definitions.fas); // This returns an array of all the icons that were added to the library in the end-user configuration
-    expect(supportedIcons).toEqual(['pencil-alt', 'trash-alt', 'exclamation-triangle']);
+    const supportedSolidIcons = Object.keys(library.definitions.fas);
+    const supportedRegularIcons = Object.keys(library.definitions.far);
+    expect(supportedSolidIcons).toStrictEqual(['pencil-alt', 'trash-alt', 'exclamation-triangle']);
+    expect(supportedRegularIcons).toStrictEqual(['address-book']);
 });
