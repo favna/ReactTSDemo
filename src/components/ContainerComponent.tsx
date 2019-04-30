@@ -1,4 +1,4 @@
-import Button from './MaterialComponent';
+import Button from '../materialui/MaterialComponent';
 import React, { FC, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
