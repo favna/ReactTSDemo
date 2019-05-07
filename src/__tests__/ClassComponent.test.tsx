@@ -1,8 +1,8 @@
-import ClassComponent from 'components/ClassComponent';
+import ClassComponent, { ClassComponentProps, ClassComponentState } from 'components/ClassComponent';
 import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
 
-let classComponent: ShallowWrapper<{ title: string; subtitle: string; }, { counter: number }, ClassComponent>;
+let classComponent: ShallowWrapper<ClassComponentProps, ClassComponentState, ClassComponent>;
 
 const title = 'TestTitle';
 const subtitle = 'SubTestTitle';

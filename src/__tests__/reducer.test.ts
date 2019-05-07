@@ -2,22 +2,27 @@ import { decrement, increment } from 'store/actions';
 import demoReducer from 'store/reducer';
 import { DemoState } from 'store/types';
 
-const initialState: DemoState = {
-  count: 0,
-};
+let initialState: DemoState;
+const getInitialState = (initial?: Partial<DemoState>) => demoReducer(initial as DemoState, {} as any);
+
+beforeEach(() => initialState = getInitialState());
+
+test('should match snapshot', () => {
+  expect(initialState).toMatchSnapshot();
+});
 
 test('Increment Action', () => {
   const action = increment(1);
-  const expectedState: DemoState = { ...initialState, count: initialState.count + 1 };
   const state = demoReducer(initialState, action);
 
-  expect(state).toMatchObject(expectedState);
+  expect(initialState.count).toBe(0);
+  expect(state).toMatchObject<DemoState>({count: 1});
 });
 
 test('Decrement Action', () => {
   const action = decrement(1);
-  const expectedState: DemoState = { ...initialState, count: initialState.count - 1 };
   const state = demoReducer(initialState, action);
 
-  expect(state).toMatchObject(expectedState);
+  expect(initialState.count).toBe(0);
+  expect(state).toMatchObject<DemoState>({count: -1});
 });

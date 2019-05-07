@@ -1,25 +1,24 @@
 import React, { Component, Fragment } from 'react';
 
-type Props = {
+export type ClassComponentProps = {
   title: string;
   subtitle: string;
 };
 
-type State = {
+export type ClassComponentState = {
   counter: number;
 };
 
-class ClassComponent extends Component<Props, State> {
+export class ClassComponent extends Component<ClassComponentProps, ClassComponentState> {
   public description: string;
 
-  constructor (props: Props) {
+  constructor (props: ClassComponentProps) {
     super(props);
     this.description = '';
     this.state = {counter: 0};
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick () {
+  handleClick = () => {
     const currentAmount = this.state.counter;
     const newAmount = currentAmount + 1;
     this.setState({counter: newAmount});
